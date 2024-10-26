@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Animation</title>
+    <title>Heart Shape</title>
     <style>
         body {
             display: flex;
@@ -11,23 +11,25 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f5f5f5;
+            background-color: #eaaccb;
         }
         .heart {
+            position: relative;
             width: 100px;
             height: 100px;
             background-color: red;
-            position: relative;
-            transform: rotate(45deg);
-            animation: beat 1s infinite;
+            /*transform: rotate(-45deg);*/
+            margin: 50px;
+            animation: beat 0.8s infinite;
         }
-        .heart::before, .heart::after {
-            content: "";
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
             width: 100px;
             height: 100px;
             background-color: red;
             border-radius: 50%;
-            position: absolute;
         }
         .heart::before {
             top: -50px;
@@ -38,12 +40,16 @@
             top: 0;
         }
         @keyframes beat {
-            0%, 100% { transform: scale(1) rotate(45deg); }
-            50% { transform: scale(1.1) rotate(45deg); }
+            0%, 100% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.1) rotate(-45deg); }
+        }
+        .text{
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
+    <div class="text"> I love you </div>
     <div class="heart"></div>
 </body>
 </html>
